@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <h1>Login</h1>
+            <div class="form-group">
+                <label for="inputUsername">Benutzername</label>
+                <input type="text" class="form-control" id="inputUsername" [(ngModel)]="username"
+                    placeholder="Benutzername">
+                <small id="emailHelp" class="form-text text-muted">Wir werden ihre Daten nur an Google,Apple und
+                    Microsoft verkaufen</small>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Passwort</label>
+                <input type="password" class="form-control" id="inputPassword" [(ngModel)]="password"
+                    placeholder="Passwort">
+
+            </div>
+            <div class="alert alert-danger" *ngIf="formInvalid">
+                Das Formular ist ungültig, bitte überprüfen sie ihre Eingaben nochmals!
+            </div>
+            <div class="alert alert-danger" *ngIf="usernameOrPasswordWrong">
+                Ihr Benutzername oder ihr Passwort ist falsch!
+            </div>
+            <button class="btn btn-outline-warning" (click)="login()">Anmelden</button>
+        </div>
+    </div>
+</div>
