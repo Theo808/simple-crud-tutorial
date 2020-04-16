@@ -7,12 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public title: string = "Hallo Benutzer!";
-
+  public bookTitle: string = "Die Reise zum Erdmittelkern";
+  public showAlert: boolean = true;
+  public newBookTitle: string = "";
+  public books: string[] = [
+    "Die unendliche Geschichte",
+    "Die drei ???",
+    "Seekers",
+    "Greg's Tagebuch",
+    "Codename Blade",
+    "Bodyguard"
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public transformBookTitle(title): string {
+    return "Buch: " + title;
+  }
+
+  public addNewBook() {
+    //this.showAlert = false;
+    this.books.push(this.newBookTitle);
+    this.newBookTitle = "";
   }
 
 }
