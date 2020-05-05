@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   public bookTitle: string = "Die Reise zum Erdmittelkern";
   public showAlert: boolean = true;
   public newBookTitle: string = "";
+  public newBookAuthor: string = "";
   public readonly maxTitleLength: number = 20;
   public books: Book[] = [];
 
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
     //this.showAlert = false;
     const book = new Book();
     book.title = this.newBookTitle
+    book.authors = [this.newBookAuthor];
     this.books.push(book);
     this.storageService.setBooks(this.books);
     this.newBookTitle = "";
