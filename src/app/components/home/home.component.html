@@ -7,7 +7,7 @@
         </div>
         <div class="col-6">
             <input class="form-control" placeholder="Neues Buch erstellen" [(ngModel)]="newBookTitle">
-            <input class="form-control" placeholder="Autor eingeben" [(ngModel)]="newBookAuthor">
+            <input class="mt-1 form-control" placeholder="Autor eingeben" [(ngModel)]="newBookAuthor">
 
             <button class="mt-1 btn btn-outline-success" [disabled]="newBookTitle.length > maxTitleLength"
                 (click)="addNewBook()">Buch
