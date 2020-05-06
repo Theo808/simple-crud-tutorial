@@ -30,10 +30,20 @@ export class HomeComponent implements OnInit {
     //this.showAlert = false;
     const book = new Book();
     book.title = this.newBookTitle
-    book.authors = [this.newBookAuthor];
+    book.authors = this.newBookAuthor ? [this.newBookAuthor] : undefined;
     this.books.push(book);
     this.storageService.setBooks(this.books);
     this.newBookTitle = "";
   }
 
+  public deleteBook(book) {
+    console.log(book);
+    this.books = this.books.filter(function (b) {
+      if (b.title == book.title) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+  }
 }
