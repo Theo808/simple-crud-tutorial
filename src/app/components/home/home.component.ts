@@ -30,19 +30,26 @@ export class HomeComponent implements OnInit {
   public addNewBook() {
     if (this.isEditing) {
       //speichere die Änderungen
-      this.books.map(function (b) {
-
+      const that = this;
+      this.books = this.books.map(function (b) {
+        if (b.id == that.isEditing) {
+          b.title = that.newBookTitle;
+          b.authors = [that.newBookAuthor];
+        }
+        return b;
       });
     } else {
       //erstelle neues Buch
       const book = new Book();
-      book.title = this.newBookTitle
+      book.title = this.newBookTitle;
       book.id = Math.round(Math.random() * 1000000);
       book.authors = this.newBookAuthor ? [this.newBookAuthor] : undefined;
       this.books.push(book);
       this.storageService.setBooks(this.books);
-      this.newBookTitle = "";
     }
+    this.newBookTitle = "";
+    this.newBookAuthor = "";
+    this.isEditing = undefined;
   }
 
   public deleteBook(book) {
