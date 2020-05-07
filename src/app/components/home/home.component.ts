@@ -45,11 +45,11 @@ export class HomeComponent implements OnInit {
       book.id = Math.round(Math.random() * 1000000);
       book.authors = this.newBookAuthor ? [this.newBookAuthor] : undefined;
       this.books.push(book);
-      this.storageService.setBooks(this.books);
     }
     this.newBookTitle = "";
     this.newBookAuthor = "";
     this.isEditing = undefined;
+    this.storageService.setBooks(this.books);
   }
 
   public deleteBook(book) {
