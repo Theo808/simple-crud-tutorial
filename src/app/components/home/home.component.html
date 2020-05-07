@@ -14,6 +14,7 @@
                         <td>{{ book.title }}</td>
                         <td>{{ book.authors }}</td>
                         <td>
+                            <button class="btn btn-outline-success" (click)="editBook(book)">Bearbeiten</button>
                             <button class="btn btn-outline-danger" (click)="deleteBook(book)">Löschen</button>
                         </td>
                     </tr>
@@ -25,8 +26,7 @@
             <input class="mt-1 form-control" placeholder="Autor eingeben" [(ngModel)]="newBookAuthor">
 
             <button class="mt-1 btn btn-outline-success" [disabled]="newBookTitle.length > maxTitleLength"
-                (click)="addNewBook()">Buch
-                hinzufügen</button>
+                (click)="addNewBook()">{{isEditing ? 'Änderungen speichern' : 'Buch hinzufügen'}}</button>
 
             <div [class]="'alert alert-' + (newBookTitle.length <= maxTitleLength ? 'primary' : 'warning')"
                 *ngIf="newBookTitle != ''">
