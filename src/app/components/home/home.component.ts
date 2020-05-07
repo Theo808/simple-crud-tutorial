@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit {
       book.title = this.newBookTitle;
       book.id = Math.round(Math.random() * 1000000);
       book.authors = this.newBookAuthor ? [this.newBookAuthor] : undefined;
+      book.price = 14;
       this.books.push(book);
     }
     this.newBookTitle = "";

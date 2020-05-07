@@ -6,6 +6,7 @@
                     <tr>
                         <th>Titel</th>
                         <th>Autor(en)</th>
+                        <th>Preis</th>
                         <th>Aktionen</th>
                     </tr>
                 </thead>
@@ -13,9 +14,10 @@
                     <tr *ngFor="let book of books">
                         <td>{{ book.title }}</td>
                         <td>{{ book.authors }}</td>
+                        <td>{{ book.price | currency:'EUR' }}</td>
                         <td>
-                            <button class="btn btn-outline-success" (click)="editBook(book)">Bearbeiten</button>
-                            <button class="btn btn-outline-danger" (click)="deleteBook(book)">Löschen</button>
+                            <button class="btn btn-outline-primary" (click)="editBook(book)">Bearbeiten</button>
+                            <button class="mt-1 btn btn-outline-danger" (click)="deleteBook(book)">Löschen</button>
                         </td>
                     </tr>
                 </tbody>
