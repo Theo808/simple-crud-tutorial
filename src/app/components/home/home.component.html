@@ -7,6 +7,7 @@
                         <th>Titel</th>
                         <th>Autor(en)</th>
                         <th>Preis</th>
+                        <th>Veröffentlichung</th>
                         <th>Aktionen</th>
                     </tr>
                 </thead>
@@ -15,6 +16,7 @@
                         <td>{{ book.title }}</td>
                         <td>{{ book.authors }}</td>
                         <td>{{ book.price | currency:'EUR' }}</td>
+                        <td>{{ book.publishDate | date:'fullDate' }}</td>
                         <td>
                             <button class="btn btn-outline-primary" (click)="editBook(book)">Bearbeiten</button>
                             <button class="mt-1 btn btn-outline-danger" (click)="deleteBook(book)">Löschen</button>

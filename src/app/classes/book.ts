@@ -3,4 +3,5 @@ export class Book {
     authors: string[];
     id: number;
     price: number;
+    publishDate: Date;
 }
