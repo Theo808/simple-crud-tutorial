@@ -14,7 +14,7 @@
                 <tbody>
                     <tr *ngFor="let book of books">
                         <td>{{ book.title }}</td>
-                        <td>{{ book.authors }}</td>
+                        <td>{{ book.authors | joinAuthors }}</td>
                         <td>{{ book.price | currency:'EUR' }}</td>
                         <td>{{ book.publishDate | date:'fullDate' }}</td>
                         <td>
